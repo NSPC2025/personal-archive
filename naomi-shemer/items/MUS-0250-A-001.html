@@ -96,5 +96,41 @@
     });
   });
 </script>
+
+  <!-- פתרון 2: גרירה עם העכבר -->
+<script>
+document.querySelectorAll('.lightbox img').forEach(img => {
+  let isDragging = false;
+  let startX, startY, scrollLeft, scrollTop;
+
+  img.addEventListener('mousedown', e => {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    scrollLeft = img.parentElement.scrollLeft;
+    scrollTop = img.parentElement.scrollTop;
+    img.style.cursor = 'grabbing';
+  });
+
+  img.addEventListener('mouseup', () => {
+    isDragging = false;
+    img.style.cursor = 'grab';
+  });
+
+  img.addEventListener('mouseleave', () => {
+    isDragging = false;
+    img.style.cursor = 'grab';
+  });
+
+  img.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    img.parentElement.scrollLeft = scrollLeft - dx;
+    img.parentElement.scrollTop = scrollTop - dy;
+  });
+});
+</script>
 </body>
 </html>
