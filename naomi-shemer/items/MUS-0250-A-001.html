@@ -3,68 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MUS 0250 A 001 - סדרה A: יצירות, שירים</title>
+<title>MUS 0250 A 001 - דאר נע (טקסט בלבד, כתב יד)</title>
 <link rel="stylesheet" href="../../style.css">
 <style>
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    justify-content: center;
-  }
-  .gallery img {
-    max-width: 200px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    transition: transform 0.3s;
-  }
-  /* Lightbox */
-  .lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-  }
-  .lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    transition: transform 0.3s;
-  }
-  .lightbox:target {
-    display: flex;
-  }
-  .lightbox .close {
-    position: absolute;
-    top: 20px; right: 30px;
-    color: white;
-    font-size: 2em;
-    text-decoration: none;
-  }
+/* הגדרות גלריה */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+.gallery-item {
+  text-align: center;
+}
+.gallery-item img {
+  max-width: 200px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: transform 0.3s;
+}
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.lightbox img {
+  max-width: none;
+  max-height: none;
+  display: block;
+  margin: auto;
+  transition: transform 0.3s;
+}
+.lightbox:target {
+  display: flex;
+}
+.lightbox .close {
+  position: absolute;
+  top: 20px; right: 30px;
+  color: white;
+  font-size: 2em;
+  text-decoration: none;
+}
+.download-btn {
+  display: inline-block;
+  margin-top: 0.5em;
+  padding: 0.3em 0.6em;
+  background-color: #0066cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1em;
+}
+.download-btn:hover {
+  background-color: #004999;
+}
 </style>
 </head>
 <body>
 <header>
-  <h1>MUS 0250 A 001 (דאר נע – טקסט בלבד, כתב יד)</h1>
+  <h1>MUS 0250 A 001 – דאר נע (טקסט בלבד, כתב יד)</h1>
   <a href="../collections/series-a.html">חזרה לסדרה A: יצירות, שירים</a>
 </header>
 
 <main>
   <h2>פרטי הפריט</h2>
   <ul>
-    <li>קטגוריה: מסמך</li>
-    <li>סוג: כתב יד</li>
-    <li>תיאור: דאר נע – טקסט בלבד מתוך אוסף נעמי שמר</li>
-    <li>תאריך: [הזן תאריך אם ידוע]</li>
+    <li>כותר: דאר נע (טקסט בלבד - כתב יד)</li>
+    <li>כותרים נוספים:
+      <ul>
+        <li>אתחלתא: הדאר בא היום באוטו האדם ולי נתן מכתב (טקסט בלבד - כתב יד)</li>
+        <li>דאר בא היום באוטו האדם ולי נתן מכתב (טקסט בלבד - כתב יד)</li>
+      </ul>
+    </li>
+    <li>שנה: [1951-1952?]</li>
+    <li>הערות:
+      <ul>
+        <li>"לילדי הגן"</li>
+        <li>תאריך משוער</li>
+        <li>גרסה מוקדמת של השיר</li>
+        <li>בצדו השני של הדף מערכי שיעור ריתמיקה</li>
+      </ul>
+    </li>
+    <li>היקף החומר: 2 עמודים</li>
   </ul>
 
   <h3>תמונות:</h3>
   <div class="gallery">
-    <a href="#img1"><img src="../archive/manuscripts/MUS-0250-A-001-1.png" alt="דאר נע - עמוד 1"></a>
-    <a href="#img2"><img src="../archive/manuscripts/MUS-0250-A-001-2.png" alt="דאר נע - עמוד 2"></a>
+    <div class="gallery-item">
+      <a href="#img1"><img src="../archive/manuscripts/MUS-0250-A-001-1.png" alt="דאר נע - עמוד 1"></a>
+      <a href="../archive/manuscripts/MUS-0250-A-001-1.png" download class="download-btn">הורד</a>
+    </div>
+    <div class="gallery-item">
+      <a href="#img2"><img src="../archive/manuscripts/MUS-0250-A-001-2.png" alt="דאר נע - עמוד 2"></a>
+      <a href="../archive/manuscripts/MUS-0250-A-001-2.png" download class="download-btn">הורד</a>
+    </div>
   </div>
 
   <!-- Lightbox 1 -->
@@ -97,42 +137,40 @@
       img.style.transform = `scale(${scale})`;
     });
   });
-</script>
 
-  <!-- פתרון 2: גרירה עם העכבר -->
-<script>
-document.querySelectorAll('.lightbox img').forEach(img => {
-  let isDragging = false;
-  let startX, startY, scrollLeft, scrollTop;
+  // גרירה עם העכבר
+  document.querySelectorAll('.lightbox img').forEach(img => {
+    let isDragging = false;
+    let startX, startY, scrollLeft, scrollTop;
 
-  img.addEventListener('mousedown', e => {
-    isDragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
-    scrollLeft = img.parentElement.scrollLeft;
-    scrollTop = img.parentElement.scrollTop;
-    img.style.cursor = 'grabbing';
+    img.addEventListener('mousedown', e => {
+      isDragging = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      scrollLeft = img.parentElement.scrollLeft;
+      scrollTop = img.parentElement.scrollTop;
+      img.style.cursor = 'grabbing';
+    });
+
+    img.addEventListener('mouseup', () => {
+      isDragging = false;
+      img.style.cursor = 'grab';
+    });
+
+    img.addEventListener('mouseleave', () => {
+      isDragging = false;
+      img.style.cursor = 'grab';
+    });
+
+    img.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      img.parentElement.scrollLeft = scrollLeft - dx;
+      img.parentElement.scrollTop = scrollTop - dy;
+    });
   });
-
-  img.addEventListener('mouseup', () => {
-    isDragging = false;
-    img.style.cursor = 'grab';
-  });
-
-  img.addEventListener('mouseleave', () => {
-    isDragging = false;
-    img.style.cursor = 'grab';
-  });
-
-  img.addEventListener('mousemove', e => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const dx = e.clientX - startX;
-    const dy = e.clientY - startY;
-    img.parentElement.scrollLeft = scrollLeft - dx;
-    img.parentElement.scrollTop = scrollTop - dy;
-  });
-});
 </script>
 </body>
 </html>
