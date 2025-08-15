@@ -36,21 +36,18 @@ footer {
   text-decoration: none;
   border-radius: 4px;
   font-size: 1em;
-}
-.download-btn {
-  display: inline-block;
-  margin-top: 1em;
-  padding: 0.3em 0.6em;
-  background-color: #0066cc;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 1em;
-}
 
 .download-btn:hover {
   background-color: #004999;
 }
+  .lightbox img {
+  max-width: 90vw;  /* לא יותר מ-90% מרוחב המסך */
+  max-height: 90vh; /* לא יותר מ-90% מגובה המסך */
+  display: block;
+  margin: auto;
+  transition: transform 0.3s;
+}
+
 
 
 
