@@ -1,137 +1,139 @@
 <!DOCTYPE html>
 <html lang="he">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>דאר נע</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MUS 0250 A 001 - דאר נע (טקסט בלבד, כתב יד)</title>
+<link rel="stylesheet" href="../../style.css">
+<style>
+      body {
       direction: rtl;
-      text-align: center;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 20px;
+      text-align: right;
     }
-
-    h1 {
-      margin-bottom: 20px;
-    }
-
-    .gallery {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .gallery img {
-      width: 150px;
-      cursor: pointer;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-      transition: transform 0.2s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-      border-color: #666;
-    }
-
-    /* lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    .lightbox:target {
-      display: block;
-    }
-
-    .lightbox .close {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      color: white;
-      font-size: 30px;
-      text-decoration: none;
-      z-index: 1001;
-    }
-
-    /* חלון תצוגה עם פסי גלילה */
-    .viewer {
-      width: 90%;
-      height: 80vh;
-      border: 1px solid #ccc;
-      overflow: scroll;
-      margin: 60px auto 0;
-      background: #fff;
-    }
-
-    .viewer img {
-      max-width: none;
-      transform-origin: top left;
-    }
-
-    .download-btn {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      padding: 10px 15px;
-      background: #fff;
-      color: #000;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    .download-btn:hover {
-      background: #ddd;
-    }
-  </style>
+/* הגדרות גלריה */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+.gallery-item {
+  text-align: center;
+}
+.gallery-item img {
+  max-width: 200px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: transform 0.3s;
+}
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.lightbox:target {
+  display: flex;
+}
+.lightbox .close {
+  position: absolute;
+  top: 20px; right: 30px;
+  color: white;
+  font-size: 2em;
+  text-decoration: none;
+}
+.download-btn {
+  display: inline-block;
+  margin-top: 0.5em;
+  padding: 0.3em 0.6em;
+  background-color: #0066cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1em;
+}
+.download-btn:hover {
+  background-color: #004999;
+}
+</style>
 </head>
 <body>
-  <h1>דאר נע</h1>
+<header>
+  <h1>MUS 0250 A 001 – דאר נע (טקסט בלבד, כתב יד)</h1>
+  <a href="../collections/series-a.html">חזרה לסדרה A: יצירות, שירים</a>
+</header>
 
+<main>
+  <h2>פרטי הפריט</h2>
+  <ul>
+    <li>כותר: דאר נע (טקסט בלבד - כתב יד)</li>
+    <li>כותרים נוספים:
+      <ul>
+        <li>אתחלתא: הדאר בא היום באוטו האדם ולי נתן מכתב (טקסט בלבד - כתב יד)</li>
+        <li>דאר בא היום באוטו האדם ולי נתן מכתב (טקסט בלבד - כתב יד)</li>
+      </ul>
+    </li>
+    <li>שנה: [1951-1952?]</li>
+    <li>הערות:
+      <ul>
+        <li>"לילדי הגן"</li>
+        <li>תאריך משוער</li>
+        <li>גרסה מוקדמת של השיר</li>
+        <li>בצדו השני של הדף מערכי שיעור ריתמיקה</li>
+      </ul>
+    </li>
+    <li>היקף החומר: 2 עמודים</li>
+  </ul>
+
+  <h3>תמונות:</h3>
   <div class="gallery">
-    <a href="#img1"><img src="../archive/manuscripts/MUS-0250-A-001-1.png" alt="עמוד 1"></a>
-    <a href="#img2"><img src="../archive/manuscripts/MUS-0250-A-001-2.png" alt="עמוד 2"></a>
+    <div class="gallery-item">
+      <a href="#img1"><img src="../archive/manuscripts/MUS-0250-A-001-1.png" alt="דאר נע - עמוד 1"></a>
+      <a href="../archive/manuscripts/MUS-0250-A-001-1.png" download class="download-btn">הורד</a>
+    </div>
+    <div class="gallery-item">
+      <a href="#img2"><img src="../archive/manuscripts/MUS-0250-A-001-2.png" alt="דאר נע - עמוד 2"></a>
+      <a href="../archive/manuscripts/MUS-0250-A-001-2.png" download class="download-btn">הורד</a>
+    </div>
   </div>
 
-  <!-- Lightbox עמוד 1 -->
+  <!-- Lightbox 1 -->
   <div id="img1" class="lightbox">
     <a href="#" class="close">&times;</a>
-    <div class="viewer">
-      <img src="../archive/manuscripts/MUS-0250-A-001-1.png" alt="עמוד 1">
-    </div>
+    <img src="../archive/manuscripts/MUS-0250-A-001-1.png" alt="דאר נע - עמוד 1">
     <a href="../archive/manuscripts/MUS-0250-A-001-1.png" download class="download-btn">הורד</a>
   </div>
 
-  <!-- Lightbox עמוד 2 -->
+  <!-- Lightbox 2 -->
   <div id="img2" class="lightbox">
     <a href="#" class="close">&times;</a>
-    <div class="viewer">
-      <img src="../archive/manuscripts/MUS-0250-A-001-2.png" alt="עמוד 2">
-    </div>
+    <img src="../archive/manuscripts/MUS-0250-A-001-2.png" alt="דאר נע - עמוד 2">
     <a href="../archive/manuscripts/MUS-0250-A-001-2.png" download class="download-btn">הורד</a>
   </div>
+</main>
 
-  <script>
-    document.querySelectorAll('.viewer img').forEach(img => {
-      let scale = 1;
-      img.addEventListener('wheel', e => {
-        e.preventDefault();
-        if (e.deltaY < 0) scale *= 1.1; // הגדלה
-        else scale /= 1.1;              // הקטנה
-        img.style.transform = `scale(${scale})`;
-      });
+<footer>
+  <p>&copy; 2025 Personal Archive</p>
+</footer>
+
+<script>
+  // זום דינמי עם גלילת העכבר
+  document.querySelectorAll('.lightbox img').forEach(img => {
+    let scale = 1;
+    img.addEventListener('wheel', e => {
+      e.preventDefault();
+      if (e.deltaY < 0) scale *= 1.1; // גלילה למעלה - הגדלה
+      else scale /= 1.1;              // גלילה למטה - הקטנה
+      img.style.transform = `scale(${scale})`;
     });
-  </script>
+  });
+</script>
 </body>
 </html>
